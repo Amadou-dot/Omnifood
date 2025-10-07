@@ -3,37 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
     <meta
       name="description"
       content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It's tailored to your personal taste and nutritional needs"
     />
+    <meta name="keywords" content="healthy food, meal delivery, AI nutrition, organic meals, food subscription, healthy eating, meal planning" />
+    <meta name="author" content="Amadou" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Omnifood - Never cook again!" />
+    <meta property="og:description" content="AI-powered food subscription that delivers healthy, personalized meals to your door 365 days a year. Tailored to your personal tastes and nutritional needs." />
+    <meta property="og:image" content="https://omnifood.dev/img/hero.png" />
+    <meta property="og:url" content="https://omnifood.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Omnifood" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Omnifood - Never cook again!" />
+    <meta name="twitter:description" content="AI-powered food subscription that delivers healthy, personalized meals to your door 365 days a year." />
+    <meta name="twitter:image" content="https://omnifood.dev/img/hero.png" />
+    <meta name="twitter:creator" content="@amadou" />
+    
+    <!-- Favicons and PWA -->
     <link rel="shortcut icon" href="img/web-favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
-    <title>Omnifood &mdash; Never cook again</title>
+    
+    <title>Omnifood &mdash; Never cook again | AI-Powered Healthy Meal Delivery</title>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Omnifood",
+      "description": "AI-powered food subscription service delivering healthy, personalized meals",
+      "url": "https://omnifood.dev",
+      "logo": "https://omnifood.dev/img/omnifood-logo.png",
+      "sameAs": [
+        "https://twitter.com/amadou",
+        "https://github.com/Amadou-dot"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Meal Subscription Service",
+        "description": "365-day healthy meal delivery service with AI-powered personalization"
+      }
+    }
+    </script>
   </head>
   <body>
-    <header class="header">
+    <!-- Skip navigation for screen readers -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    
+    <header class="header" role="banner">
       <a href="#"
         ><img src="img/omnifood-logo.png" alt="Omnifood logo" class="logo"
       /></a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#how">How it works</a></li>
           <li><a class="main-nav-link" href="#meals">Meals</a></li>
           <li>
-            <a class="main-nav-link" href="#testimonials">Testamonials</a>
+            <a class="main-nav-link" href="#testimonials">Testimonials</a>
           </li>
           <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
           <li>
@@ -41,13 +102,13 @@
           </li>
         </ul>
       </nav>
-      <button class="btn-mobile-nav">
-        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
-        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      <button class="btn-mobile-nav" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle mobile navigation">
+        <ion-icon class="icon-mobile-nav" name="menu-outline" aria-hidden="true"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline" aria-hidden="true"></ion-icon>
       </button>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
       <section class="section-hero">
         <div class="hero">
           <div class="hero-text-box">
@@ -681,11 +742,12 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    </script>
 
     <script
       defer
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+      crossorigin="anonymous"
     ></script>
 
     <script defer src="js/script.js"></script>
