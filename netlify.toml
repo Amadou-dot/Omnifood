@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/omnifood/*"
-  to = "/omnifood/:splat"
-  status = 200
